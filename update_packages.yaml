@@ -1,0 +1,8 @@
+---
+- name: Name of the play
+  hosts: localhost
+  tasks:
+  - name: Update yum rep
+    yum: # module
+      name: '*'
+      state: latest
