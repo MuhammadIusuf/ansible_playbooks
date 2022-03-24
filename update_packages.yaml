@@ -1,13 +1,13 @@
----
-- name: Name of the play
+--- # Start of YAML file
+- name: Update Packages, Install packages, Create and insert lines in a file
   hosts: localhost
   tasks:
-  - name: Update yum rep
+  - name: Update all "yum" packages
     yum: # module
       name: '*'
       state: latest
     yum:
-  - name: Install reps
+  - name: Install packages
     yum:
       name:
         - vim
@@ -15,3 +15,13 @@
         - wget
         - tree
       state: latest
+  - name: Create an empty file
+    file: # module
+      path: /tmp/file1_ansible
+      state: touch
+  - name: Insert lines to a file
+    blockinfile:
+      path: /tmp/file1_ansible
+      block: |
+        this is line one
+        this is line two
