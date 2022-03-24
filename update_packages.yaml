@@ -6,3 +6,11 @@
     yum: # module
       name: '*'
       state: latest
+    yum:
+  - name: Install reps
+    yum:
+      name:
+        - vim
+        - curl
+        - wget
+      state: latest
