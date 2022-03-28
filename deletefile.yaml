@@ -1,0 +1,8 @@
+--- # deleted index html because had to copy it using ansible playbook
+- name: Delete file
+  hosts: 10.124.0.3
+  tasks:
+    - name: Remove file
+      file:
+        path: /usr/share/nginx/html
+        state: absent
