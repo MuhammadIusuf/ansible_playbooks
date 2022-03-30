@@ -1,6 +1,6 @@
 --- # Install nginx
 - name: Install nginx
-  hosts: 10.124.0.3
+  hosts: all
   tasks:
   - name: add epel-release repo
     yum:
